@@ -1,14 +1,21 @@
-<div class="center hero-unit">
-    <h1>Welcome to Motion! </h1>
-    
-    <p>You've discovered the home page for 
-    	<%= link_to 'Motion',  "http://onemonthrails.com" %>, the application that takes you into the real world.
-    	</p>
+<% if user_signed_in? %>
+	<h1>You've signed in. Motion starts now.</h1> 
 
-    	<p> <%= link_to 'Sign up now!',  "#" , class: "btn btn-large btn-success" %>
-     </p>
+<%else%>
 
-   
-</div>
+
+	 <div class="center hero-unit">
+	    <h1>Welcome to Motion! </h1>
+	    
+	    <p>You've discovered the home page for 
+	    	<%= link_to 'Motion',  "http://onemonthrails.com" %>, the application that takes you into the real world.
+	    	</p>
+
+	    	<p> <%= link_to 'Sign up now!',  new_user_registration_path, class: "btn btn-large btn-success" %>
+	     </p>
+
+	   
+	</div>
+<% end %>
 
 
